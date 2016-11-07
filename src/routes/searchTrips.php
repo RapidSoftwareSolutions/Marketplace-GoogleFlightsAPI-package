@@ -16,6 +16,16 @@ $app->post('/api/GoogleFlightsAPI/searchTrips', function ($request, $response, $
         $post_data = json_decode($data, true);
     }
     
+    if(json_last_error() != 0) {
+        $error[] = json_last_error_msg() . '. Incorrect input JSON. Please, check fields with JSON input.';
+    }
+    
+    if(!empty($error)) {
+        $result['callback'] = 'error';
+        $result['contextWrites']['to'] = implode(',', $error);
+        return $response->withHeader('Content-type', 'application/json')->withStatus(200)->withJson($result);
+    }
+    
     $error = [];
     if(empty($post_data['args']['apiKey'])) {
         $error[] = 'apiKey cannot be empty';
@@ -53,7 +63,6 @@ $app->post('/api/GoogleFlightsAPI/searchTrips', function ($request, $response, $
         $result['contextWrites']['to'] = implode(',', $error);
         return $response->withHeader('Content-type', 'application/json')->withStatus(200)->withJson($result);
     }
-    
     
     $query_str = 'https://www.googleapis.com/qpxExpress/v1/trips/search';
     
