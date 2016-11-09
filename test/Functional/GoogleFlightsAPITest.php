@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Functional;
+namespace Test\Functional;
 
 require_once __DIR__ . '/../../src/Models/normalizeJson.php';
 
