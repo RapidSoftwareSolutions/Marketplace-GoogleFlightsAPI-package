@@ -36,3 +36,21 @@ This endpoint returns a list of flights.
 | refundable                 | String     | Optional: Return only solutions with refundable fares.
 | solutions                  | String     | Optional: The number of solutions to return, maximum 500.
 
+#### Request example
+```json
+
+{
+	"apiKey": "xxxxxxxxx",
+	"passengersKind": "qpxexpress#passengerCounts",
+	"passengersAdultCount": "1",
+	"passengersChildCount": "0",
+        "passengersInfantInLapCount": "0",
+        "passengersInfantInSeatCount": "0",
+        "passengersSeniorCount": "0",
+        "slises": [{"kind": "qpxexpress#sliceInput","origin": "BOS","destination": "LAX","date": "2017-03-10"},{"kind": "qpxexpress#sliceInput","origin": "LAX","destination": "BOS","date": "2017-10-22"}],
+        "saleCountry": "US",
+        "ticketingCountry": "US",
+        "solutions": "1"
+}
+```
+
