@@ -21,7 +21,7 @@ class GoogleFlightsAPITest extends BaseTestCase {
                             "passengersInfantInLapCount": "0",
                             "passengersInfantInSeatCount": "0",
                             "passengersSeniorCount": "0",
-                            "slice": "\"[{\"kind\": \"qpxexpress#sliceInput\", \"origin\": \"BOS\", \"destination\": \"LAX\", \"date\": \"'.$day1.'\"}, {\"kind\": \"qpxexpress#sliceInput\", \"origin\": \"LAX\", \"destination\": \"BOS\", \"date\": \"'.$day2.'\"}]\"",
+                            "slices": "\"[{\"kind\": \"qpxexpress#sliceInput\", \"origin\": \"BOS\", \"destination\": \"LAX\", \"date\": \"'.$day1.'\"}, {\"kind\": \"qpxexpress#sliceInput\", \"origin\": \"LAX\", \"destination\": \"BOS\", \"date\": \"'.$day2.'\"}]\"",
                             "saleCountry": "US",
                             "ticketingCountry": "US",
                             "solutions": "1"
