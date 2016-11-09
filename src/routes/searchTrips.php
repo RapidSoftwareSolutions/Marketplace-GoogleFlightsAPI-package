@@ -28,39 +28,40 @@ $app->post('/api/GoogleFlightsAPI/searchTrips', function ($request, $response, $
     
     $error = [];
     if(empty($post_data['args']['apiKey'])) {
-        $error[] = 'apiKey cannot be empty';
+        $error[] = 'apiKey is required';
     }
     if(empty($post_data['args']['passengersKind'])) {
-        $error[] = 'passengersKind cannot be empty';
+        $error[] = 'passengersKind is required';
     }
     if($post_data['args']['passengersAdultCount']=='') {
-        $error[] = 'passengersAdultCount cannot be empty';
+        $error[] = 'passengersAdultCount is required';
     }
     if($post_data['args']['passengersChildCount']=='') {
-        $error[] = 'passengersChildCount cannot be empty';
+        $error[] = 'passengersChildCount is required';
     }
     if($post_data['args']['passengersInfantInLapCount']=='') {
-        $error[] = 'passengersInfantInLapCount cannot be empty';
+        $error[] = 'passengersInfantInLapCount is required';
     }
     if($post_data['args']['passengersInfantInSeatCount']=='') {
-        $error[] = 'passengersInfantInSeatCount cannot be empty';
+        $error[] = 'passengersInfantInSeatCount is required';
     }
     if($post_data['args']['passengersSeniorCount']=='') {
-        $error[] = 'passengersSeniorCount cannot be empty';
+        $error[] = 'passengersSeniorCount is required';
     }
-    if(empty($post_data['args']['slice'])) {
-        $error[] = 'slice cannot be empty';
+    if(empty($post_data['args']['slices'])) {
+        $error[] = 'slices is required';
     }
     if(empty($post_data['args']['saleCountry'])) {
-        $error[] = 'saleCountry cannot be empty';
+        $error[] = 'saleCountry is required';
     }
     if(empty($post_data['args']['ticketingCountry'])) {
-        $error[] = 'ticketingCountry cannot be empty';
+        $error[] = 'ticketingCountry is required';
     }
     
     if(!empty($error)) {
         $result['callback'] = 'error';
-        $result['contextWrites']['to'] = implode(',', $error);
+        $result['contextWrites']['to']['message'] = "There are incomplete fields in your request";
+        $result['contextWrites']['to']['fields'] = $error;
         return $response->withHeader('Content-type', 'application/json')->withStatus(200)->withJson($result);
     }
     
@@ -96,8 +97,8 @@ $app->post('/api/GoogleFlightsAPI/searchTrips', function ($request, $response, $
     if(!empty($post_data['args']['passengersSeniorCount'])) {
         $body['request']['request']['passengers']['seniorCount'] = $post_data['args']['passengersSeniorCount'];
     }
-    if(!empty($post_data['args']['slice'])) {
-        $body['request']['slice'] = $post_data['args']['slice'];
+    if(!empty($post_data['args']['slices'])) {
+        $body['request']['slice'] = $post_data['args']['slices'];
     }
     if(!empty($post_data['args']['maxPrice'])) {
         $body['request']['maxPrice'] = $post_data['args']['maxPrice'];

@@ -47,7 +47,7 @@ This endpoint returns a list of flights.
         "passengersInfantInLapCount": "0",
         "passengersInfantInSeatCount": "0",
         "passengersSeniorCount": "0",
-        "slises": [{"kind": "qpxexpress#sliceInput","origin": "BOS","destination": "LAX","date": "2017-03-10"},{"kind": "qpxexpress#sliceInput","origin": "LAX","destination": "BOS","date": "2017-10-22"}],
+        "slices": [{"kind": "qpxexpress#sliceInput","origin": "BOS","destination": "LAX","date": "2017-03-10"},{"kind": "qpxexpress#sliceInput","origin": "LAX","destination": "BOS","date": "2017-10-22"}],
         "saleCountry": "US",
         "ticketingCountry": "US",
         "solutions": "1"
