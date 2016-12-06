@@ -1,93 +1,104 @@
-{ 
+{
     "package": "GoogleFlightsAPI",
     "tagline": "Google Flights API Wrapper",
-    "description": "A Trips resource represents a set of flight search results, each of which contains multiple priced itineraries.",
-    "image": "http://logo.clearbit.com/google.com",
-    "repo": "https://github.com/RapidSoftwareSolutions/Marketplace-GoogleFlightsAPI-package",
+    "description": "Return real-time flight prices and availabilities.",
+    "image": "http:\/\/logo.clearbit.com\/google.com",
+    "repo": "https:\/\/github.com\/RapidSoftwareSolutions\/Marketplace-GoogleFlightsAPI-package",
+    "keywords": ["API", "Google", "american", "delta", "flight", "flights", "fly", "southwest", "travel", "united"],
     "accounts": {
         "domain": "google.com",
         "credentials": ["apiKey"]
     },
     "blocks": [{
-        "name":"searchTrips",
-        "description": "This endpoint returns a list of flights.",
-        "args":[
-            {
-                "name": "apiKey",
-                "type": "credentials",
-                "info": "Required: Your ApiKey obtained from Google Developer Console."
-            }, {
-                "name": "fields",
-                "type": "String",
-                "info": "Optional: Selector specifying a subset of fields to include in the response. For more information, see the partial response documentation. Use for better performance.."
-            }, {
-                "name": "quotaUser",
-                "type": "String",
-                "info": "Optional: Alternative to userIp. Lets you enforce per-user quotas from a server-side application even in cases when the user's IP address is unknown. This can occur, for example, with applications that run cron jobs on App Engine on a user's behalf. You can choose any arbitrary string that uniquely identifies a user, but it is limited to 40 characters. Overrides userIp if both are provided. Learn more about capping usage."
-            }, {
-                "name": "userIp",
-                "type": "String",
-                "info": "Optional: IP address of the end user for whom the API call is being made. Lets you enforce per-user quotas when calling the API from a server-side application. Learn more about capping usage."
-            }, {
-                "name": "passengersKind",
-                "type": "String",
-                "info": "Required: Identifies this as a passenger count object, representing the number of passengers. Value: the fixed string qpxexpress#passengerCounts."
-            }, {
-                "name": "passengersAdultCount",
-                "type": "String",
-                "info": "Required: The number of passengers that are adults."
-            }, {
-                "name": "passengersChildCount",
-                "type": "String",
-                "info": "Required: The number of passengers that are children."
-            }, {
-                "name": "passengersInfantInLapCount",
-                "type": "String",
-                "info": "Required: The number of passengers that are infants travelling in the lap of an adult."
-            }, {
-                "name": "passengersInfantInSeatCount",
-                "type": "String",
-                "info": "Required: The number of passengers that are infants each assigned a seat."
-            }, {
-                "name": "passengersSeniorCount",
-                "type": "String",
-                "info": "Required: The number of passengers that are senior citizens."
-            }, {
-                "name": "slices",
-                "type": "JSON",
-                "info": "Required: Array of json objects. The slices that make up the itinerary of this trip. A slice represents a traveler's intent, the portion of a low-fare search corresponding to a traveler's request to get between two points. One-way journeys are generally expressed using one slice, round-trips using two. An example of a two slice trip would be: BOS-LAX 10MAR2017, LAX-BOS 22MAR2017. Please see request example in Docs section."
-            }, {
-                "name": "maxPrice",
-                "type": "String",
-                "info": "Optional: Do not return solutions that cost more than this price. The currency is specified in ISO-4217. The format, in regex, is [A-Z] {3} \\d+(\\.\\d+)?"
-            }, {
-                "name": "saleCountry",
-                "type": "String",
-                "info": "Required: IATA country code representing the point of sale. This determines the \"equivalent amount paid\" currency for the ticket."
-            }, {
-                "name": "ticketingCountry",
-                "type": "String",
-                "info": "Required: IATA country code representing the point of ticketing."
-            }, {
-                "name": "refundable",
-                "type": "String",
-                "info": "Optional: Return only solutions with refundable fares."
-            }, {
-                "name": "solutions",
-                "type": "String",
-                "info": "Optional: The number of solutions to return, maximum 500."
-            }
-        ],
-        "callbacks":[
-            {
-                "name":"error",
-                "info": "Error"
-            },
-            {
-                "name":"success",
-                "info": "Success => channels: Array <string>"
-            }
-        ]
-    }
-    ]
+            "name": "searchTrips",
+            "description": "This endpoint returns a list of flights.",
+            "args": [{
+                    "name": "apiKey",
+                    "type": "credentials",
+                    "info": "Your ApiKey obtained from Google Developer Console.",
+                    "required": true
+                }, {
+                    "name": "fields",
+                    "type": "String",
+                    "info": "Selector specifying a subset of fields to include in the response. For more information, see the partial response documentation. Use for better performance..",
+                    "required": false
+                }, {
+                    "name": "quotaUser",
+                    "type": "String",
+                    "info": "Alternative to userIp. Lets you enforce per-user quotas from a server-side application even in cases when the user's IP address is unknown. This can occur, for example, with applications that run cron jobs on App Engine on a user's behalf. You can choose any arbitrary string that uniquely identifies a user, but it is limited to 40 characters. Overrides userIp if both are provided. Learn more about capping usage.",
+                    "required": false
+                }, {
+                    "name": "userIp",
+                    "type": "String",
+                    "info": "IP address of the end user for whom the API call is being made. Lets you enforce per-user quotas when calling the API from a server-side application. Learn more about capping usage.",
+                    "required": false
+                }, {
+                    "name": "passengersKind",
+                    "type": "String",
+                    "info": "Identifies this as a passenger count object, representing the number of passengers. Value: the fixed string qpxexpress#passengerCounts.",
+                    "required": true
+                }, {
+                    "name": "passengersAdultCount",
+                    "type": "String",
+                    "info": "The number of passengers that are adults.",
+                    "required": true
+                }, {
+                    "name": "passengersChildCount",
+                    "type": "String",
+                    "info": "The number of passengers that are children.",
+                    "required": true
+                }, {
+                    "name": "passengersInfantInLapCount",
+                    "type": "String",
+                    "info": "The number of passengers that are infants travelling in the lap of an adult.",
+                    "required": true
+                }, {
+                    "name": "passengersInfantInSeatCount",
+                    "type": "String",
+                    "info": "The number of passengers that are infants each assigned a seat.",
+                    "required": true
+                }, {
+                    "name": "passengersSeniorCount",
+                    "type": "String",
+                    "info": "The number of passengers that are senior citizens.",
+                    "required": true
+                }, {
+                    "name": "slices",
+                    "type": "JSON",
+                    "info": "Array of json objects. The slices that make up the itinerary of this trip. A slice represents a traveler's intent, the portion of a low-fare search corresponding to a traveler's request to get between two points. One-way journeys are generally expressed using one slice, round-trips using two. An example of a two slice trip would be: BOS-LAX 10MAR2017, LAX-BOS 22MAR2017. Please see request example in Docs section.",
+                    "required": true
+                }, {
+                    "name": "maxPrice",
+                    "type": "String",
+                    "info": "Do not return solutions that cost more than this price. The currency is specified in ISO-4217. The format, in regex, is [A-Z] {3} \\d+(\\.\\d+)?",
+                    "required": false
+                }, {
+                    "name": "saleCountry",
+                    "type": "String",
+                    "info": "IATA country code representing the point of sale. This determines the \"equivalent amount paid\" currency for the ticket.",
+                    "required": true
+                }, {
+                    "name": "ticketingCountry",
+                    "type": "String",
+                    "info": "IATA country code representing the point of ticketing.",
+                    "required": true
+                }, {
+                    "name": "refundable",
+                    "type": "String",
+                    "info": "Return only solutions with refundable fares.",
+                    "required": false
+                }, {
+                    "name": "solutions",
+                    "type": "String",
+                    "info": "The number of solutions to return, maximum 500.",
+                    "required": false
+                }],
+            "callbacks": [{
+                    "name": "error",
+                    "info": "Error"
+                }, {
+                    "name": "success",
+                    "info": "Success"
+                }]
+        }]
 }

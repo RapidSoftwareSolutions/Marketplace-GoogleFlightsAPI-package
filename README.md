@@ -10,10 +10,6 @@ A Trips resource represents a set of flight search results, each of which contai
 3. In the sidebar on the left, select **Credentials**.
 4. If your project has no API key for the server, create it now - **Add credentials > API key > Server key**;
 
-## TOC: 
-* [searchTrips](#searchTrips)
- 
-<a name="searchTrips"/>
 ## GoogleFlightsAPI.searchTrips
 This endpoint returns a list of flights.
 
@@ -36,21 +32,21 @@ This endpoint returns a list of flights.
 | refundable                 | String     | Optional: Return only solutions with refundable fares.
 | solutions                  | String     | Optional: The number of solutions to return, maximum 500.
 
-#### Request example
+#### slices format
 ```json
-
-{
-	"apiKey": "xxxxxxxxx",
-	"passengersKind": "qpxexpress#passengerCounts",
-	"passengersAdultCount": "1",
-	"passengersChildCount": "0",
-        "passengersInfantInLapCount": "0",
-        "passengersInfantInSeatCount": "0",
-        "passengersSeniorCount": "0",
-        "slices": [{"kind": "qpxexpress#sliceInput","origin": "BOS","destination": "LAX","date": "2017-03-10"},{"kind": "qpxexpress#sliceInput","origin": "LAX","destination": "BOS","date": "2017-10-22"}],
-        "saleCountry": "US",
-        "ticketingCountry": "US",
-        "solutions": "1"
-}
+[  
+    {  
+        "kind":"qpxexpress#sliceInput",
+        "origin":"BOS",
+        "destination":"LAX",
+        "date":"2017-03-10"
+    },
+    {  
+        "kind":"qpxexpress#sliceInput",
+        "origin":"LAX",
+        "destination":"BOS",
+        "date":"2017-10-22"
+    }
+]
 ```
 
