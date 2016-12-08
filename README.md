@@ -1,5 +1,5 @@
 # GoogleFlightsAPI Package
-A Trips resource represents a set of flight search results, each of which contains multiple priced itineraries.
+Return real-time flight prices and availabilities
 * Domain: google.com
 * Credentials: apiKey
 
@@ -9,6 +9,22 @@ A Trips resource represents a set of flight search results, each of which contai
 2. Press **Continue** to activate API key.
 3. In the sidebar on the left, select **Credentials**.
 4. If your project has no API key for the server, create it now - **Add credentials > API key > Server key**;
+
+## GoogleFlightsAPI.searchSingleTrip
+This endpoint returns information about single trip.
+
+| Field                      | Type       | Description
+|----------------------------|------------|----------
+| apiKey                     | credentials| Required: Your ApiKey obtained from Google Developer Console.
+| origin                     | String     | Required: The departure city. 3-digit code IATA format, for example: BOS - Boston.
+| destination                | String     | Required: The city of arrival. 3-digit code IATA format, for example: BOS - Boston.
+| passengersAdultCount       | String     | Required: The number of passengers that are adults.
+| passengersChildCount       | String     | Required: The number of passengers that are children.
+| fromDate                   | String     | Required: The date of departure. Format:  YYYY-mm-dd. Example: 2016-12-20
+| toDate                     | String     | Optional: The return flight date. Format:  YYYY-mm-dd. Example: 2016-12-20
+| maxPrice                   | String     | Optional: Do not return solutions that cost more than this price. The currency is specified in ISO-4217. The format, in regex, is [A-Z] {3} \d+(\.\d+)?
+| refundable                 | String     | Optional: Return only solutions with refundable fares.
+| solutions                  | String     | Optional: The number of solutions to return, maximum 500.
 
 ## GoogleFlightsAPI.searchTrips
 This endpoint returns a list of flights.

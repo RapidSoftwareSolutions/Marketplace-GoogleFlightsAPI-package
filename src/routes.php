@@ -1,6 +1,7 @@
 <?php
 $routes = [
     'searchTrips',
+    'searchSingleTrip',
     'metadata'
 ];
 foreach($routes as $file) {

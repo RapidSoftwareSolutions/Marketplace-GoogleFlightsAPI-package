@@ -10,6 +10,67 @@
         "credentials": ["apiKey"]
     },
     "blocks": [{
+            "name": "searchSingleTrip",
+            "description": "This endpoint returns information about single trip.",
+            "args": [{
+                    "name": "apiKey",
+                    "type": "credentials",
+                    "info": "Your ApiKey obtained from Google Developer Console.",
+                    "required": true
+                }, {
+                    "name": "origin",
+                    "type": "String",
+                    "info": "The departure city. 3-digit code IATA format, for example: BOS - Boston",
+                    "required": true
+                }, {
+                    "name": "destination",
+                    "type": "String",
+                    "info": "The city of arrival. 3-digit code IATA format, for example: BOS - Boston",
+                    "required": true
+                }, {
+                    "name": "passengersAdultCount",
+                    "type": "String",
+                    "info": "The number of passengers that are adults.",
+                    "required": true
+                }, {
+                    "name": "passengersChildCount",
+                    "type": "String",
+                    "info": "The number of passengers that are children.",
+                    "required": true
+                }, {
+                    "name": "fromDate",
+                    "type": "String",
+                    "info": "The date of departure. Format:  YYYY-mm-dd. Example: 2016-12-20",
+                    "required": true
+                }, {
+                    "name": "toDate",
+                    "type": "String",
+                    "info": "The return flight date. Format:  YYYY-mm-dd. Example: 2016-12-20",
+                    "required": false
+                }, {
+                    "name": "maxPrice",
+                    "type": "String",
+                    "info": "Do not return solutions that cost more than this price. The currency is specified in ISO-4217. The format, in regex, is [A-Z] {3} \\d+(\\.\\d+)?",
+                    "required": false
+                }, {
+                    "name": "refundable",
+                    "type": "String",
+                    "info": "Return only solutions with refundable fares.",
+                    "required": false
+                }, {
+                    "name": "solutions",
+                    "type": "String",
+                    "info": "The number of solutions to return, maximum 500.",
+                    "required": false
+                }],
+            "callbacks": [{
+                    "name": "error",
+                    "info": "Error"
+                }, {
+                    "name": "success",
+                    "info": "Success"
+                }]
+        }, {
             "name": "searchTrips",
             "description": "This endpoint returns a list of flights.",
             "args": [{

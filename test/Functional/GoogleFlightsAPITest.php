@@ -36,4 +36,30 @@ class GoogleFlightsAPITest extends BaseTestCase {
         $this->assertEquals('success', json_decode($response->getBody())->callback);
     }
     
+    public function testSearchSingleTrip() {
+        
+        $datetime = new \DateTime('tomorrow');
+        $datetime->modify('+5 day');
+        $day1 = $datetime->format('Y-m-d');
+        $day2 = $datetime->format('Y-m-d');
+        $var = '{
+                    "args": {
+                        "apiKey": "AIzaSyAzZh-8USDutBTnBWMoH6VADYn_qXXR7pA",
+                        "origin": "IEV",
+                        "destination": "LAX",
+                        "passengersAdultCount": "1",
+                        "passengersChildCount": "0",
+                        "fromDate": "'.$day1.'",
+                        "toDate": "'.$day2.'"
+                    }
+                }';
+        $post_data = json_decode($var, true);
+
+        $response = $this->runApp('POST', '/api/GoogleFlightsAPI/searchSingleTrip', $post_data);
+        
+        $this->assertEquals(200, $response->getStatusCode());
+        $this->assertNotEmpty($response->getBody());
+        $this->assertEquals('success', json_decode($response->getBody())->callback);
+    }
+    
 }
