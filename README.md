@@ -1,3 +1,5 @@
+[![](https://scdn.rapidapi.com/RapidAPI_banner.png)](https://rapidapi.com/package/GoogleFlightsAPI/functions?utm_source=RapidAPIGitHub_GoogleFlightsFunctions&utm_medium=button&utm_content=RapidAPI_GitHub)
+
 # GoogleFlightsAPI Package
 Return real-time flight prices and availabilities
 * Domain: google.com
