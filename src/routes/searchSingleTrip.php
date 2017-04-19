@@ -72,7 +72,7 @@ $app->post('/api/GoogleFlightsAPI/searchSingleTrip', function ($request, $respon
     
     $client = $this->httpClient;
     
-    $resp = $client->get( 'https://iatacodes.org/api/v6/cities?api_key=b5f45262-a803-4834-863b-26ed4f9f02c8&code='.$post_data['args']['origin'] );
+    $resp = $client->get( 'http://iatacodes.org/api/v6/cities?api_key=b5f45262-a803-4834-863b-26ed4f9f02c8&code='.$post_data['args']['origin'] );
     $responseBody = $resp->getBody()->getContents();
     $country = json_decode($responseBody, true)['response']['country_code'];
     $body['request']['saleCountry'] = $country;
