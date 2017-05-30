@@ -82,13 +82,15 @@ $app->post('/api/GoogleFlightsAPI/searchSingleTrip', function ($request, $respon
     $origin['kind'] = 'qpxexpress#sliceInput';
     $origin['origin'] = $post_data['args']['origin'];
     $origin['destination'] = $post_data['args']['destination'];
-    $origin['date'] = $post_data['args']['fromDate'];
+    $dateTime = new DateTime($post_data['args']['fromDate']);
+    $origin['date'] = $dateTime->format('Y-m-d');
     $slice[] = $origin;
     if(!empty($post_data['args']['toDate'])) {
         $origin['kind'] = 'qpxexpress#sliceInput';
         $origin['origin'] = $post_data['args']['destination'];
         $origin['destination'] = $post_data['args']['origin'];
-        $origin['date'] = $post_data['args']['toDate'];
+        $dateTime = new DateTime($post_data['args']['toDate']);
+        $origin['date'] = $dateTime->format('Y-m-d');
         $slice[] = $origin;
     }
     $body['request']['slice'] = $slice;
