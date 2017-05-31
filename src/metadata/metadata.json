@@ -165,14 +165,35 @@
         },
         {
           "name": "slices",
-          "type": "List",
+          "type": "Array",
           "info": "Array of json objects. The slices that make up the itinerary of this trip. A slice represents a traveler's intent, the portion of a low-fare search corresponding to a traveler's request to get between two points. One-way journeys are generally expressed using one slice, round-trips using two. An example of a two slice trip would be: BOS-LAX 10MAR2017, LAX-BOS 22MAR2017. Please see request example in Docs section.",
           "required": true,
-          "structure": {
-            "name": "slice",
-            "type": "JSON",
-            "info": "Single slice"
-          }
+          "structure": [
+            {
+              "name": "kind",
+              "type": "String",
+              "info": "Currently should be equal to qpxexpress#sliceInput",
+              "required": true
+            },
+            {
+              "name": "origin",
+              "type": "String",
+              "info": "Origin",
+              "required": true
+            },
+            {
+              "name": "destination",
+              "type": "String",
+              "info": "Destination",
+              "required": true
+            },
+            {
+              "name": "date",
+              "type": "DatePicker",
+              "info": "Date",
+              "required": true
+            }
+          ]
         },
         {
           "name": "maxPrice",
