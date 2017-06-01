@@ -34,19 +34,19 @@ $app->post('/api/GoogleFlightsAPI/searchTrips', function ($request, $response, $
     if(empty($post_data['args']['passengersKind'])) {
         $error[] = 'passengersKind';
     }
-    if($post_data['args']['passengersAdultCount']=='') {
+    if(empty($post_data['args']['passengersAdultCount'])) {
         $error[] = 'passengersAdultCount';
     }
-    if($post_data['args']['passengersChildCount']=='') {
+    if(empty($post_data['args']['passengersChildCount'])) {
         $error[] = 'passengersChildCount';
     }
-    if($post_data['args']['passengersInfantInLapCount']=='') {
+    if(empty($post_data['args']['passengersInfantInLapCount'])) {
         $error[] = 'passengersInfantInLapCount';
     }
-    if($post_data['args']['passengersInfantInSeatCount']=='') {
+    if(empty($post_data['args']['passengersInfantInSeatCount'])) {
         $error[] = 'passengersInfantInSeatCount';
     }
-    if($post_data['args']['passengersSeniorCount']=='') {
+    if(empty($post_data['args']['passengersSeniorCount'])) {
         $error[] = 'passengersSeniorCount';
     }
     if(empty($post_data['args']['slices'])) {
