@@ -63,7 +63,7 @@ $app->post('/api/GoogleFlightsAPI/searchTrips', function ($request, $response, $
         $result['callback'] = 'error';
         $result['contextWrites']['to']['status_code'] = "REQUIRED_FIELDS";
         $result['contextWrites']['to']['status_msg'] = "Please, check and fill in required fields.";
-        $result['contextWrites']['to']['fields'] = $error;
+        $result['contextWrites']['to']['fields'] = $post_data;
         return $response->withHeader('Content-type', 'application/json')->withStatus(200)->withJson($result);
     }
     
