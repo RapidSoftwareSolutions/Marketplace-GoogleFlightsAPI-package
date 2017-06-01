@@ -37,16 +37,16 @@ $app->post('/api/GoogleFlightsAPI/searchTrips', function ($request, $response, $
     if(empty($post_data['args']['passengersAdultCount'])) {
         $error[] = 'passengersAdultCount';
     }
-    if(empty($post_data['args']['passengersChildCount'])) {
+    if(empty($post_data['args']['passengersChildCount']) && $post_data['args']['passengersChildCount'] != 0 ) {
         $error[] = 'passengersChildCount';
     }
-    if(empty($post_data['args']['passengersInfantInLapCount'])) {
+    if(empty($post_data['args']['passengersInfantInLapCount']) && $post_data['args']['passengersInfantInLapCount'] != 0) {
         $error[] = 'passengersInfantInLapCount';
     }
-    if(empty($post_data['args']['passengersInfantInSeatCount'])) {
+    if(empty($post_data['args']['passengersInfantInSeatCount']) && $post_data['args']['passengersInfantInSeatCount'] != 0) {
         $error[] = 'passengersInfantInSeatCount';
     }
-    if(empty($post_data['args']['passengersSeniorCount'])) {
+    if(empty($post_data['args']['passengersSeniorCount']) && $post_data['args']['passengersSeniorCount'] != 0) {
         $error[] = 'passengersSeniorCount';
     }
     if(empty($post_data['args']['slices'])) {
@@ -63,7 +63,7 @@ $app->post('/api/GoogleFlightsAPI/searchTrips', function ($request, $response, $
         $result['callback'] = 'error';
         $result['contextWrites']['to']['status_code'] = "REQUIRED_FIELDS";
         $result['contextWrites']['to']['status_msg'] = "Please, check and fill in required fields.";
-        $result['contextWrites']['to']['fields'] = $post_data;
+        $result['contextWrites']['to']['fields'] = $error;
         return $response->withHeader('Content-type', 'application/json')->withStatus(200)->withJson($result);
     }
     
