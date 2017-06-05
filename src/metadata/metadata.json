@@ -59,13 +59,13 @@
         },
         {
           "name": "fromDate",
-          "type": "Datepicker",
+          "type": "DatePicker",
           "info": "The date of departure. Format:  YYYY-mm-dd. Example: 2016-12-20",
           "required": true
         },
         {
           "name": "toDate",
-          "type": "Datepicker",
+          "type": "DatePicker",
           "info": "The return flight date. Format:  YYYY-mm-dd. Example: 2016-12-20",
           "required": false
         },
