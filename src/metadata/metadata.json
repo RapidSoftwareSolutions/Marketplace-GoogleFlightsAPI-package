@@ -47,13 +47,13 @@
         },
         {
           "name": "passengersAdultCount",
-          "type": "String",
+          "type": "Number",
           "info": "The number of passengers that are adults.",
           "required": true
         },
         {
           "name": "passengersChildCount",
-          "type": "String",
+          "type": "Number",
           "info": "The number of passengers that are children.",
           "required": true
         },
@@ -72,18 +72,22 @@
         {
           "name": "maxPrice",
           "type": "String",
-          "info": "Do not return solutions that cost more than this price. The currency is specified in ISO-4217. The format, in regex, is [A-Z] {3} \\d+(\\.\\d+)?",
+          "info": "Do not return solutions that cost more than this price. The currency is specified in ISO-4217. The format, in regex, is [A-Z] {3} \\d+(\\.\\d+)?. Example ( EUR355.50 ) ( USD505.00 )",
           "required": false
         },
         {
           "name": "refundable",
-          "type": "String",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
           "info": "Return only solutions with refundable fares.",
           "required": false
         },
         {
           "name": "solutions",
-          "type": "String",
+          "type": "Number",
           "info": "The number of solutions to return, maximum 500.",
           "required": false
         }
@@ -111,7 +115,12 @@
         },
         {
           "name": "fields",
-          "type": "String",
+          "type": "List",
+          "structure": {
+            "name": "field",
+            "type": "String",
+            "info": "Single field"
+          },
           "info": "Selector specifying a subset of fields to include in the response. For more information, see the partial response documentation. Use for better performance..",
           "required": false
         },
@@ -135,31 +144,31 @@
         },
         {
           "name": "passengersAdultCount",
-          "type": "String",
+          "type": "Number",
           "info": "The number of passengers that are adults.",
           "required": true
         },
         {
           "name": "passengersChildCount",
-          "type": "String",
+          "type": "Number",
           "info": "The number of passengers that are children.",
           "required": true
         },
         {
           "name": "passengersInfantInLapCount",
-          "type": "String",
+          "type": "Number",
           "info": "The number of passengers that are infants travelling in the lap of an adult.",
           "required": true
         },
         {
           "name": "passengersInfantInSeatCount",
-          "type": "String",
+          "type": "Number",
           "info": "The number of passengers that are infants each assigned a seat.",
           "required": true
         },
         {
           "name": "passengersSeniorCount",
-          "type": "String",
+          "type": "Number",
           "info": "The number of passengers that are senior citizens.",
           "required": true
         },
@@ -189,7 +198,7 @@
             },
             {
               "name": "date",
-              "type": "Strong",
+              "type": "DatePicker",
               "info": "Date",
               "required": true
             }
@@ -198,7 +207,7 @@
         {
           "name": "maxPrice",
           "type": "String",
-          "info": "Do not return solutions that cost more than this price. The currency is specified in ISO-4217. The format, in regex, is [A-Z] {3} \\d+(\\.\\d+)?",
+          "info": "Do not return solutions that cost more than this price. The currency is specified in ISO-4217. The format, in regex, is [A-Z] {3} \\d+(\\.\\d+)? Example ( EUR355.50 ) ( USD505.00 )",
           "required": false
         },
         {
@@ -215,13 +224,17 @@
         },
         {
           "name": "refundable",
-          "type": "String",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
           "info": "Return only solutions with refundable fares.",
           "required": false
         },
         {
           "name": "solutions",
-          "type": "String",
+          "type": "Number",
           "info": "The number of solutions to return, maximum 500.",
           "required": false
         }

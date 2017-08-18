@@ -34,7 +34,7 @@ This endpoint returns information about single trip.
 | passengersChildCount       | String     | Required: The number of passengers that are children.
 | fromDate                   | Datepicker     | Required: The date of departure. Format:  YYYY-mm-dd. Example: 2016-12-20
 | toDate                     | Datepicker     | Optional: The return flight date. Format:  YYYY-mm-dd. Example: 2016-12-20
-| maxPrice                   | String     | Optional: Do not return solutions that cost more than this price. The currency is specified in ISO-4217. The format, in regex, is [A-Z] {3} \d+(\.\d+)?
+| maxPrice                   | String     | Optional: Do not return solutions that cost more than this price. The currency is specified in ISO-4217. The format, in regex, is [A-Z] {3} \d+(\.\d+)?. Example ( EUR355.50 ) ( USD505.00 )
 | refundable                 | String     | Optional: Return only solutions with refundable fares.
 | solutions                  | String     | Optional: The number of solutions to return, maximum 500.
 
@@ -54,7 +54,7 @@ This endpoint returns a list of flights.
 | passengersInfantInSeatCount| String     | Required: The number of passengers that are infants each assigned a seat.
 | passengersSeniorCount      | String     | Required: The number of passengers that are senior citizens.
 | slices                     | Array       | Required: Array of json objects. The slices that make up the itinerary of this trip. A slice represents a traveler's intent, the portion of a low-fare search corresponding to a traveler's request to get between two points. One-way journeys are generally expressed using one slice, round-trips using two. An example of a two slice trip would be: BOS-LAX 10MAR2017, LAX-BOS 22MAR2017. Example: [{"kind": "qpxexpress#sliceInput","origin": "BOS","destination": "LAX","date": "2017-03-10"},{"kind": "qpxexpress#sliceInput","origin": "LAX","destination": "BOS","date": "2017-10-22"}]
-| maxPrice                   | String     | Optional: Do not return solutions that cost more than this price. The currency is specified in ISO-4217. The format, in regex, is [A-Z] {3} \d+(\.\d+)?
+| maxPrice                   | String     | Optional: Do not return solutions that cost more than this price. The currency is specified in ISO-4217. The format, in regex, is [A-Z] {3} \d+(\.\d+)?. Example ( EUR355.50 ) ( USD505.00 )
 | saleCountry                | String     | Required: IATA country code representing the point of sale. This determines the "equivalent amount paid" currency for the ticket.
 | ticketingCountry           | String     | Required: IATA country code representing the point of ticketing.
 | refundable                 | String     | Optional: Return only solutions with refundable fares.
