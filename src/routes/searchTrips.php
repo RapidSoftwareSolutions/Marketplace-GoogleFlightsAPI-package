@@ -100,6 +100,10 @@ $app->post('/api/GoogleFlightsAPI/searchTrips', function ($request, $response, $
         $body['request']['request']['passengers']['seniorCount'] = $post_data['args']['passengersSeniorCount'];
     }
     if (!empty($post_data['args']['slices'])) {
+        foreach ($post_data['args']['slices'] as $key=>$slice){
+            $date = new DateTime($slice['date']);
+            $post_data['args']['slices'][$key]['date'] = $date->format("Y-m-d");
+        }
         $body['request']['slice'] = $post_data['args']['slices'];
     }
     if (!empty($post_data['args']['maxPrice'])) {
