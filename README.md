@@ -11,7 +11,7 @@ Return real-time flight prices and availabilities
 2. Press **Continue** to activate API key
 3. Select 'Enable APIs and services' to enable the APIs you want to use
 4. In the sidebar on the left, select **Credentials**
-5. If your project has no API key for the server, create it now - **Add credentials > API key > Server key**
+5. If your project has no API key for the server, create it now - **Create credentials > API key**
 
 ## Custom datatypes: 
  |Datatype|Description|Example
