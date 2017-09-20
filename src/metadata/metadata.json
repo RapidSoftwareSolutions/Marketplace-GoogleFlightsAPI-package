@@ -23,7 +23,7 @@
     ]
   },
   "steps": [
-    "Go to Google Developers Console",
+    "Go to Google Developers Console (https://console.developers.google.com/)",
     "Select a project, or create a new one",
     "Press Continue to activate API key",
     "Select 'Enable APIs and services' to enable the APIs you want to use",
