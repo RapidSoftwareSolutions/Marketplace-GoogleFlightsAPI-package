@@ -6,11 +6,12 @@ Return real-time flight prices and availabilities
 * Credentials: apiKey
 
 ## How to get credentials: 
-0. Go to [Google Developers Console](https://console.developers.google.com/?authuser=1);
-1. Select a project, or create a new one.
-2. Press **Continue** to activate API key.
-3. In the sidebar on the left, select **Credentials**.
-4. If your project has no API key for the server, create it now - **Add credentials > API key > Server key**;
+0. Go to [Google Developers Console](https://console.developers.google.com/?authuser=1)
+1. Select a project, or create a new one
+2. Press **Continue** to activate API key
+3. Select 'Enable APIs and services' to enable the APIs you want to use
+4. In the sidebar on the left, select **Credentials**
+5. If your project has no API key for the server, create it now - **Add credentials > API key > Server key**
 
 ## Custom datatypes: 
  |Datatype|Description|Example
