@@ -22,6 +22,14 @@
       "apiKey"
     ]
   },
+  "steps": [
+    "Go to Google Developers Console",
+    "Select a project, or create a new one",
+    "Press Continue to activate API key",
+    "Select 'Enable APIs and services' to enable the APIs you want to use",
+    "In the sidebar on the left, select Credentials",
+    "If your project has no API key for the server, create it now - Create credentials > API key"
+  ],
   "blocks": [
     {
       "name": "searchSingleTrip",
